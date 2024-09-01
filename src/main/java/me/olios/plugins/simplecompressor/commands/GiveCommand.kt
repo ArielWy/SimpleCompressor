@@ -1,6 +1,6 @@
 package me.olios.plugins.simplecompressor.commands
 
-import me.olios.plugins.simplecompressor.CompressorHandler
+import me.olios.plugins.simplecompressor.CompressorsHandler
 import me.olios.plugins.simplecompressor.SimpleCompressor
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
@@ -15,7 +15,11 @@ class GiveCommand(private val plugin: SimpleCompressor): CommandExecutor, TabCom
 
         when (command) {
             "give" -> {
-                sender.inventory.setItemInMainHand(CompressorHandler(plugin).AutoCompressorItemStack())
+                when (p3[1].lowercase()) {
+                    "AutoCompressor" -> sender.inventory.setItemInMainHand(CompressorsHandler(plugin).getCompressorItemStack("AutoCompressor"))
+                    "SuperAutoCompressor" -> sender.inventory.setItemInMainHand(CompressorsHandler(plugin).getCompressorItemStack("SuperAutoCompressor"))
+                    else -> sender.sendMessage("Invalid compressor type. Available: AutoCompressor, SuperAutoCompressor")
+                }
                 return true
             }
             "reload" -> {
@@ -38,6 +42,8 @@ class GiveCommand(private val plugin: SimpleCompressor): CommandExecutor, TabCom
         if (p1.name.equals("simplecompressor", ignoreCase = true)) {
             if (p3!!.size == 1)
                 return mutableListOf("give", "reload")
+            if (p3.size == 2)
+                return mutableListOf("AutoCompressor", "SuperAutoCompressor")
         }
         return null
     }

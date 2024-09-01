@@ -1,6 +1,6 @@
 package me.olios.plugins.simplecompressor.listeners
 
-import me.olios.plugins.simplecompressor.CompressorHandler
+import me.olios.plugins.simplecompressor.CompressorsHandler
 import me.olios.plugins.simplecompressor.SimpleCompressor
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
@@ -17,12 +17,16 @@ class ItemPickupListener(private val plugin: SimpleCompressor): Listener {
 
         if (player !is Player) return
 
-        player.sendMessage(player.inventory.itemInMainHand.displayName())
-        player.sendMessage("§6------------------------------------------")
-        player.sendMessage(player.inventory.itemInMainHand.lore().toString())
+        if (CompressorsHandler(plugin).hasCompressor(player, "AutoCompressor")) {
+            // the player has auto compressor
+            player.sendMessage("§byou have auto compressor")
 
-        if (!CompressorHandler(plugin).hasAutoCompressor(player)) return
+        }
 
-        player.sendMessage("HAS COMPRESSOR")
+        if (CompressorsHandler(plugin).hasCompressor(player, "SuperAutoCompressor")) {
+            // the player has super auto compressor
+            player.sendMessage("§9you have super auto compressor")
+
+        }
     }
 }
