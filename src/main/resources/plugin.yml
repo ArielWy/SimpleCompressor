@@ -2,3 +2,9 @@ name: SimpleCompressor
 version: '${project.version}'
 main: me.olios.plugins.simplecompressor.SimpleCompressor
 api-version: 1.20
+commands:
+  SimpleCompressor:
+    aliases:
+      - sc
+    description: the main command for the SimpleCompressor plugin
+    usage: /<command> [give|reload]

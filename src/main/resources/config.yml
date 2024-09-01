@@ -1,0 +1,26 @@
+
+AutoCompressor:
+  material: "OBSIDIAN"
+  name: "<blue>Auto Compressor</blue>"
+  lore:
+    - "hey"
+    - "bye"
+
+SuperAutoCompressor:
+  material: "OBSIDIAN"
+  name: "<blue>Auto Compressor</blue>"
+  lore:
+    - "hey"
+    - "bye"
+
+AutoCompressItems:
+  - item-name: ""
+    compressed-item-name: ""
+  - item-name: ""
+    compressed-item-name: ""
+
+SuperAutoCompressItems:
+  - item-name: ""
+    compressed-item-name: ""
+  - item-name: ""
+    compressed-item-name: ""
