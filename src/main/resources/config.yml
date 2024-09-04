@@ -7,20 +7,24 @@ AutoCompressor:
     - "bye"
 
 SuperAutoCompressor:
-  material: "OBSIDIAN"
-  name: "<blue>Auto Compressor</blue>"
+  material: "GLASS"
+  name: "<red>Super Auto Compressor</red>"
   lore:
-    - "hey"
-    - "bye"
+    - "it"
+    - "is"
+    - "a"
+    - "super"
+    - "auto"
+    - "compressor"
 
 AutoCompressItems:
-  - item-name: ""
-    compressed-item-name: ""
-  - item-name: ""
-    compressed-item-name: ""
+  - item-name: "stony"
+    compressed-item-name: "not stony"
+  - item-name: "cooly"
+    compressed-item-name: "not cooly"
 
 SuperAutoCompressItems:
-  - item-name: ""
-    compressed-item-name: ""
-  - item-name: ""
-    compressed-item-name: ""
+  - item-name: "bla"
+    compressed-item-name: "not bla"
+  - item-name: "bli"
+    compressed-item-name: "not bli"
